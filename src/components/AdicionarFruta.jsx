@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { actions } from "../actions/frutas.action";
 
 const AdicionarFruta = () => {
   const [nome, setNome] = useState("");
   const [quantidade, setQuantidade] = useState(0);
+
+  const dispatch = useDispatch()
+
+
   const adicionarFruta = (event) => {
     event.preventDefault();
     const fruta = {
@@ -10,7 +17,7 @@ const AdicionarFruta = () => {
         nome,
         quantidade
     }
-    console.log("Adicionar fruta", fruta);
+    dispatch(actions.adicionar(fruta))
   };
   return (
     <form onSubmit={adicionarFruta}>

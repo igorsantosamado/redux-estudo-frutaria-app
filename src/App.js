@@ -3,7 +3,7 @@ import "./App.css";
 import ListaFrutas from "./components/ListaFrutas";
 
 function App() {
-  return <div className="App">
+  return <div className="container">
     <ListaFrutas />
   </div>;
 }
